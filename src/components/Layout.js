@@ -1,9 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {Link} from 'gatsby'
 import { HiOutlineMenuAlt3 } from "@react-icons/all-files/hi/HiOutlineMenuAlt3";
 
 
 const Layout = ({children}) => {
+    const navContainer = `
+    md:flex
+    justify-between
+    shadow-lg
+    rounded-sm
+    bg-white
+    items-center
+    sticky
+    top-0
+    z-20
+    bg-opacity-50
+    `
     const navbarStyles = `
     md:static
     fixed
@@ -18,18 +30,12 @@ const Layout = ({children}) => {
     md:w-auto
     w-10/12
     md:text-gray-500
-    text-white
     md:space-y-0
     space-y-5
     p-2
-    `
-    const fullNavbarStyle = `
-    flex
-    justify-end
-    shadow-md
-    w-full
-    pt-4
-    pb-4
+    transition-left
+    duration-1000
+    
     `
     const linkStyle = `
     text-zinc-500
@@ -39,22 +45,23 @@ const Layout = ({children}) => {
     text-center
     py-8
     text-slate-50
-    bg-gradient-to-tl
-    from-purple-300
-    via-red-200
-    to-purple-300
     `
+    const [ showNavbar, setShowNavbar ] = useState(false);
 
     return (
-        <div>
-            <nav className="md:flex justify-between items-center bg-white sticky top-0 z-20">
+        <div className=' 
+        bg-gradient-to-tl
+        from-purple-300
+        via-red-200
+        to-purple-300'>
+            <nav className={navContainer}>
                 <div className="flex items-center justify-between">
                 <a href="/">
-                    Logo<HiOutlineMenuAlt3 />
+                    Logo
                 </a>
-                <HiOutlineMenuAlt3 />
+                <HiOutlineMenuAlt3 onClick={() => setShowNavbar(!showNavbar)} className="md:hidden block w-10 h-10 p-2 cursor-pointer"/>
                 </div>
-                <ul className={navbarStyles}>
+                <ul className={(showNavbar ? "left-0 " : "-left-full ") + navbarStyles}>
                     <li className={linkStyle}><Link to="/about">about</Link></li>
                     <li className={linkStyle}><Link to="/projects">projects</Link></li>
                     <li className={linkStyle}><Link to="/blog">blog</Link></li>

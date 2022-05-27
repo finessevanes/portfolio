@@ -6,6 +6,11 @@ module.exports = {
     fontFamily: {
       lato: ['Lato, sans-serif']
     },
+    extend: {
+      transitionProperty: {
+        'left': 'left',
+      }
+    }
   },
   plugins: [],
 }
