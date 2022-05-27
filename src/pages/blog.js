@@ -1,11 +1,11 @@
 import React from 'react'
 import Layout from "../components/Layout"
-import AboutPage from "../components/About"
+import BlogPage from "../components/Blog"
 
 const About = () => {
     return (
         <Layout>
-            <AboutPage/>
+            <BlogPage />
         </Layout>
     )
 }
