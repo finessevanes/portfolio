@@ -15,8 +15,8 @@ const Layout = ({children}) => {
         from-purple-300
         via-red-200
         to-purple-300'>
-            <NavBar />
-            <main>{children}</main>
+            {/* <NavBar /> */}
+            <main className='h-screen'>{children}</main>
             <footer className={footerStyle}>
                 <p>THIS IS THE FOOTER</p>
             </footer>
