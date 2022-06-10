@@ -1,13 +1,15 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import NavBar from './NavBar'
 
 
 const Layout = ({children}) => {
-    const footerStyle = `
-    text-center
-    py-8
-    text-slate-50
-    `
+    const [ showNav, setShowNav ] = useState(true);
+
+    useEffect(() =>{
+        if (window.location.pathname === '/'){
+            setShowNav(false);
+        }
+    }, [])
 
     return (
         <div className='
@@ -15,11 +17,10 @@ const Layout = ({children}) => {
         from-purple-300
         via-red-200
         to-purple-300'>
-            {/* <NavBar /> */}
+            {showNav && (
+                <NavBar/>
+            )}
             <main className='h-screen'>{children}</main>
-            <footer className={footerStyle}>
-                <p>THIS IS THE FOOTER</p>
-            </footer>
         </div>
     )
 }
