@@ -7,7 +7,7 @@ const NavBar = () => {
     md:flex
     justify-between
     shadow-lg
-    rounded-sm
+    rounded
     bg-white
     items-center
     sticky
@@ -51,7 +51,6 @@ const NavBar = () => {
                     <HiOutlineMenuAlt3 onClick={() => setShowNav(!showNav)} className="md:hidden block w-10 h-10 p-2 cursor-pointer"/>
                 </div>
                 <ul className={(showNav ? "left-0 " : "-left-full ") + navStyles}>
-                    <li className={linkStyle}><Link to="/about">about</Link></li>
                     <li className={linkStyle}><Link to="/projects">projects</Link></li>
                     <li className={linkStyle}><Link to="/blog">blog</Link></li>
                     <li className={linkStyle}><Link to="/hobbies">hobbies</Link></li>

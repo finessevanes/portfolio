@@ -1,14 +1,33 @@
 import React from 'react'
+import Typed from 'react-typed';
 
 const Projects = () => {
+    const projectCard = `
+    flex
+    bg-white
+    h-96 w-70
+    bg-opacity-50
+    shadow-2xl
+    rounded-md
+    mt-8
+    justify-center
+    flecol
+    `
     return (
-        <div className="text-center py-24 w-4/5 mx-auto">
-            <h3 className="font-rammetto text-2xl pb-4">Bah blah balh projects</h3>
-            <p>We created HealthRoom to ensure that every person has an opportunity to keep up with health and fitness tips.
+        <div className="text-center py-24 w-4/5 mx-auto font-lato">
+                <Typed
+                    className="text-6xl mt-72 text-center  md:mt-96 text-gray-700"
+                    strings={['projects']}
+                    typeSpeed={100}
+                />
+            <div>
+                <div className={projectCard}>
+                    <img className='pt-4 object-contain h-48 w-96 md:h-64' src="https://gateway.pinata.cloud/ipfs/Qmbar9F8gEAggURc5Eyp6hUYQb49u1SjS39EBAMjNPcenQ" />
+                    <h2>buildspace hackathon</h2>
+                    <p>built on top of the original wave portal, Slam Poetry checks to see if you are an existing buildspace nft holder. If you are, you are able to </p>
 
-
-                We hope to stay around for many years and continue offering our service to readers worldwide.
-            </p>
+                </div>
+            </div>
         </div>
     )
 }
